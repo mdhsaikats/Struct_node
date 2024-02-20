@@ -18,6 +18,8 @@ int main(){
     push(1);
     push(2);
     push(3);
+    pop();
+   // pop();
 
     for(int i=top; i>=0; i--)
     {
