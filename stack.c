@@ -25,4 +25,5 @@ int main(){
     {
         printf("%d\n",s_array[i]);
     }
+    return 0;
 }
