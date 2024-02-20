@@ -1,29 +1,44 @@
 #include<stdio.h>
 int s_array[5];
-int top=-1;
-
-
+int top=0;
+//int data;
 void push(int data)
 {
-    top=top+1;
+    if(top==4 )
+    {
+        printf("Overflow\n");
+    }else{
+    top++;
     s_array[top]=data;
-}
+    }
 
+}
 void pop()
 {
-    top--;
+    if(top ==-1){
+        printf("UnderFlow\n");
+    }else{
+        top--;
+    }
 }
-
 int main(){
-    push(1);
-    push(2);
-    push(3);
+    push(5);
+    push(10);
+    push(12);
+    push(15);
+    push(20);
+    //push(2);
     pop();
-   // pop();
+    pop();
+    pop();
+    pop();
+    pop();
+    pop();
+
+
 
     for(int i=top; i>=0; i--)
     {
         printf("%d\n",s_array[i]);
     }
-    return 0;
 }
