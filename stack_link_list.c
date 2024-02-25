@@ -4,10 +4,9 @@ struct node
     int data;
     struct node *next;
 };
-struct node *top;
+struct node *top , *head , *ptr;
 void push(int data)
 {
-    struct node *head;
     head=(struct node*)malloc(sizeof(struct node));
     head->data = data;
     head->next = top;
@@ -15,7 +14,8 @@ void push(int data)
 }
 void pop()
 {
-    struct Node* temp = top;
+    struct Node *temp = top;
+    temp=malloc(sizeof(struct node));
     top = top->next;
     free(temp);
 }
@@ -25,7 +25,6 @@ int main()
   push(2);
   push(3);
   pop();
- struct node *ptr;
  ptr=top;
   while(ptr!=NULL)
   {
