@@ -1,46 +1,36 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-struct node {
+#include<stdio.h>
+struct node
+{
     int data;
     struct node *next;
 };
-
-void push(int data, struct node **top) {
-    struct node *new_node = malloc(sizeof(struct node));
-    if (new_node == NULL) {
-        printf("Memory allocation failed\n");
-        return;
-    }
-    new_node->data = data;
-    new_node->next = *top;
-    *top = new_node;
+struct node *top;
+void push(int data)
+{
+    struct node *head;
+    head=(struct node*)malloc(sizeof(struct node));
+    head->data = data;
+    head->next = top;
+    top = head;
 }
-
-int pop(struct node **top) {
-    if (*top == NULL) {
-        printf("Underflow\n");
-        return -1;
-    }
-    int popped_data = (*top)->data;
-    struct node *temp = *top;
-    *top = (*top)->next;
+void pop()
+{
+    struct Node* temp = top;
+    top = top->next;
     free(temp);
-    return popped_data;
 }
-
-int main() {
-    struct node *top = NULL;
-
-    push(1, &top);
-    push(2, &top);
-    push(3, &top);
-
-    printf("%d\n", pop(&top));
-    printf("%d\n", pop(&top));
-    printf("%d\n", pop(&top));
-    printf("%d\n", pop(&top));
-
-    return 0;
+int main()
+{
+  push(1);
+  push(2);
+  push(3);
+  pop();
+ struct node *ptr;
+ ptr=top;
+  while(ptr!=NULL)
+  {
+      printf("%d\n",ptr->data);
+      ptr=ptr->next;
+  }
+  return 0;
 }
-
