@@ -1,6 +1,6 @@
 #include<stdio.h>
 int s_array[5];
-int top=0;
+int top=-1;
 //int data;
 void push(int data)
 {
