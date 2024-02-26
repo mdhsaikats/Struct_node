@@ -61,10 +61,5 @@
          ptr=ptr->next;
      }
      return 0;
-
-
-
-
-
-
  }
+//saikat
